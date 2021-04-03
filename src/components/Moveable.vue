@@ -103,12 +103,10 @@ export default {
   },
   methods: methodMap,
   mounted() {
-    console.log('mountings...')
     this.moveable = new Moveable(this.$props.container, {
       ...this.$props,
       target: this.target || this.$el,
     });
-    console.log(this.moveable)
     EVENTS.forEach((event) => {
       const kebabCaseEvent = event.replace(/([a-z0-9]|(?=[A-Z]))([A-Z])/g, '$1-$2').toLowerCase();
       this.moveable.on(event, this.$emit.bind(this, kebabCaseEvent));

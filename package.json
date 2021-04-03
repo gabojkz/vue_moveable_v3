@@ -1,11 +1,20 @@
 {
   "name": "vue_moveable_v3",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.0.0-semantically-released",
+  "main": "./dist/lib/VueMoveable.common.js",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "build:demo": "vue-cli-service build --dest dist/demo",
+    "build:lib": "vue-cli-service build --target lib --dest dist/lib --name VueMoveable 'src/components/Moveable.vue'",
     "lint": "vue-cli-service lint"
+  },
+  "files": [
+    "dist/lib"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "vue": "~3"
   },
   "dependencies": {
     "core-js": "^3.6.5",
@@ -20,9 +29,6 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^7.0.0",
-    "node-sass": "^5.0.0",
-    "sass": "1.32.7",
-    "sass-loader": "10.1.1",
     "vue-template-compiler": "^2.6.12"
   },
   "eslintConfig": {

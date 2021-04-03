@@ -10,7 +10,6 @@
         @rotate="handleRotate"
         @warp="handleWarp"
       >
-        <i class="fas fa-plus"></i>
         <span>Vue Moveable</span>
       </Moveable>
 
@@ -23,14 +22,12 @@
           @click="currentState = key"
         >{{ state }}</a>
       </div>
-      <!-- <Badges /> -->
     </div>
   </div>
 </template>
 
 <script>
 import Moveable from '@/components/Moveable.vue';
-// import Badges from '@/components/Badges.vue';
 
 export default {
   name: 'app',
@@ -97,11 +94,9 @@ export default {
 };
 </script>
 
-<style lang="scss">
-  @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600&display=swap");
-  @import url("https://fonts.googleapis.com/css?family=Roboto:100&display=swap");
+<style>
   html, body {
-    font-family: "Open Sans", sans-serif;
+    font-family: sans-serif;
     position: relative;
     margin: 0;
     padding: 0;
