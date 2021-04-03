@@ -1,5 +1,5 @@
 {
-  "name": "vue_moveable_v3",
+  "name": "@gabojkz/vue_moveable_v3",
   "version": "0.0.0-semantically-released",
   "main": "./dist/lib/VueMoveable.common.js",
   "scripts": {
