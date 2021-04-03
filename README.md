@@ -10,7 +10,7 @@ Usage of this software is under your own risk
 
 ### Clone this repo
 ```
-git clone https://github.com/probil/vue-moveable.git
+git clone https://github.com/gabojkz/vue_moveable_v3.git
 ```
 
 ### Project setup
