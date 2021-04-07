@@ -19,7 +19,6 @@ const watchMoveableProps = () => PROPERTIES.reduce((acc, prop) => {
   acc[prop] = watchReactiveProp(prop, true);
   return acc;
 }, {});
-console.log(watchMoveableProps())
 
 const methodMap = {};
 
