@@ -4,7 +4,7 @@
   </div>
 </template>
 <script>
-import Moveable, { EVENTS, PROPERTIES, METHODS } from 'moveable';
+import Moveable, { EVENTS, PROPERTIES, METHODS } from "moveable";
 
 const watchReactiveProp = (key, deep) => ({
   handler(newValue) {
@@ -19,6 +19,7 @@ const watchMoveableProps = () => PROPERTIES.reduce((acc, prop) => {
   acc[prop] = watchReactiveProp(prop, true);
   return acc;
 }, {});
+console.log(watchMoveableProps())
 
 const methodMap = {};
 
@@ -29,7 +30,7 @@ METHODS.forEach((name) => {
 });
 
 export default {
-  name: 'Moveable',
+  name: "Moveable",
   inheritAttrs: false,
   props: {
     target: [HTMLElement, SVGElement],
@@ -108,18 +109,18 @@ export default {
       target: this.target || this.$el,
     });
     EVENTS.forEach((event) => {
-      const kebabCaseEvent = event.replace(/([a-z0-9]|(?=[A-Z]))([A-Z])/g, '$1-$2').toLowerCase();
+      const kebabCaseEvent = event.replace(/([a-z0-9]|(?=[A-Z]))([A-Z])/g, "$1-$2").toLowerCase();
       this.moveable.on(event, this.$emit.bind(this, kebabCaseEvent));
       // Backwards support for camelCase events
       this.moveable.on(event, this.$emit.bind(this, event));
     });
-    window.addEventListener('resize', this.updateRect, { passive: true });
+    window.addEventListener("resize", this.updateRect, { passive: true });
   },
-  watch: {
+  watchEffect: {
     ...watchMoveableProps(),
   },
   beforeUnmount() {
-    window.removeEventListener('resize', this.updateRect);
+    window.removeEventListener("resize", this.updateRect);
     this.moveable.destroy();
   },
 };
